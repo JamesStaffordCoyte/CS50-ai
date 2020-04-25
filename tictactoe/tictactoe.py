@@ -13,9 +13,9 @@ def initial_state():
     """
     Returns starting state of the board.
     """
-    return [[O, X, O],
-            [O, X, X],
-            [X, O, X]]
+    return [[EMPTY, EMPTY, EMPTY],
+            [EMPTY, EMPTY, EMPTY],
+            [EMPTY, EMPTY, EMPTY]]
 
 def player(board):
     """
@@ -91,7 +91,7 @@ def min_value(board):
         v = min(v, max_value(result(board, action)))
     return v
 
-def max_value(board):
+def p(board):
     if terminal(board):
         return utility(board)
     v = -10000
